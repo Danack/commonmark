@@ -16,6 +16,7 @@ namespace League\CommonMark\Environment;
 use League\CommonMark\Configuration\ConfigurationProviderInterface;
 use League\CommonMark\Delimiter\Processor\DelimiterProcessorCollection;
 use League\CommonMark\Extension\ExtensionInterface;
+use League\CommonMark\Node\Node;
 use League\CommonMark\Normalizer\TextNormalizerInterface;
 use League\CommonMark\Parser\Block\BlockStartParserInterface;
 use League\CommonMark\Parser\Inline\InlineParserInterface;
@@ -44,7 +45,7 @@ interface EnvironmentInterface extends ConfigurationProviderInterface, EventDisp
     public function getDelimiterProcessors(): DelimiterProcessorCollection;
 
     /**
-     * @psalm-param class-string $nodeClass
+     * @psalm-param class-string<Node> $nodeClass
      *
      * @return iterable<NodeRendererInterface>
      */
